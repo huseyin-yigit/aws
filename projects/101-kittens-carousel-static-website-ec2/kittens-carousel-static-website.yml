@@ -24,7 +24,7 @@ Resources:
   WebServerHost:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0603cbe34fd08cb81
+      ImageId: ami-0c94855ba95c71c99
       InstanceType: t2.micro
       KeyName: banana
       SecurityGroupIds:
@@ -39,8 +39,8 @@ Resources:
             #! /bin/bash
             yum update -y
             yum install httpd -y
-            FOLDER="https://https://raw.githubusercontent.com/TylerCounter/aws/master/projects/101-kittens-carousel-static-website-ec2/static-web/"
-            curl -s --create-dirs -o "index.h/var/www/html/tml" -L "$FOLDER"index.html
+            FOLDER="https://raw.githubusercontent.com/huseyin-yigit/aws/master/projects/101-kittens-carousel-static-website-ec2/static-web/"
+            curl -s --create-dirs -o "/var/www/html/index.html" -L "$FOLDER"index.html
             curl -s --create-dirs -o "/var/www/html/cat0.jpg" -L "$FOLDER"cat0.jpg
             curl -s --create-dirs -o "/var/www/html/cat1.jpg" -L "$FOLDER"cat1.jpg
             curl -s --create-dirs -o "/var/www/html/cat2.jpg" -L "$FOLDER"cat2.jpg
