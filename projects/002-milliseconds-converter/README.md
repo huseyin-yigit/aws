@@ -1,7 +1,8 @@
 # Project-002 : Milliseconds Converter Application (Python Flask) deployed on AWS Application Load Balancer with Auto Scaling Group using AWS Cloudformation
 
 ## Description
-The Milliseconds Converter Application aims to convert the given time in milliseconds into hours, minutes, and seconds. The application is to be coded in Python and deployed as a web application with Flask on AWS Application Load Balancer with Auto Scaling Group of Elastic Compute Cloud (EC2) Instances using AWS Cloudformation Service. 
+
+The Milliseconds Converter Application aims to convert the given time in milliseconds into hours, minutes, and seconds. The application is to be coded in Python and deployed as a web application with Flask on AWS Application Load Balancer with Auto Scaling Group of Elastic Compute Cloud (EC2) Instances using AWS Cloudformation Service.
 
 ## Problem Statement
 
@@ -11,23 +12,23 @@ The Milliseconds Converter Application aims to convert the given time in millise
 
 - As a first step of the project, you need to write program that converts the given milliseconds into hours, minutes, and seconds. The program should convert only from milliseconds to hours/minutes/seconds, not vice versa and during the conversion following notes should be taken into consideration.
 
-   - If the calculated time of hours is 0, it should not be shown in the output.
+  - If the calculated time of hours is 0, it should not be shown in the output.
 
-   - If the calculated time of minutes is 0, it should not be shown in the output.
+  - If the calculated time of minutes is 0, it should not be shown in the output.
 
-   - If the calculated time of seconds is 0, it should not be shown in the output.
+  - If the calculated time of seconds is 0, it should not be shown in the output.
 
-   - If the milliseconds is greater than 1000, remainder milliseconds should not be shown in the output.
+  - If the milliseconds is greater than 1000, remainder milliseconds should not be shown in the output.
 
-   - If milliseconds given is less than 1000, only milliseconds should be shown in the output.
+  - If milliseconds given is less than 1000, only milliseconds should be shown in the output.
 
-   - Output should always be string in the format shown in the examples.
+  - Output should always be string in the format shown in the examples.
 
 - Example for user inputs and respective outputs
 
-```
+```text
 Input             Output
-(milliseconds)    (Calculated Time) 
+(milliseconds)    (Calculated Time)
 --------------    -----------------
 555               just 555 millisecond/s
 2001              2 second/s
@@ -37,7 +38,7 @@ Input             Output
 7200011           2 hour/s
 7322011           2 hour/s 2 minute/s 2 second/s
 ```
-   
+
 - As a second step, after you finish the coding, you are requested to deploy your web application using Python's Flask framework.
 
 - You need to transform your program into web application using the `index.html` and `result.html` within the `templates` folder. Note the followings for your web application.
@@ -102,7 +103,7 @@ Input             Output
 002-milliseconds-converter (folder)
 |
 |----readme.md         # Given to the students (Definition of the project)          
-|----cf-template.yml   # To be delivered by students (Cloudformation template)
+|----cfn-template.yml  # To be delivered by students (Cloudformation template)
 |----app.py            # To be delivered by students (Python Flask Web Application)
 |----templates
         |----index.html  # Given to the students (HTML template)
@@ -157,7 +158,7 @@ Input             Output
 
 ## Steps to Solution
   
-- Step 1: Download or clone project definition from `clarusway-aws-workshop` repo on Github 
+- Step 1: Download or clone project definition from `clarusway-aws-workshop` repo on Github
 
 - Step 2: Create project folder for local public repo on your pc
 
@@ -180,6 +181,10 @@ Input             Output
 - Customize the application by hard-coding your name for the `developer_name` variable within html templates.
 
 - Use AWS CLI commands to get subnet ids of the default VPCs.
+
+```bash
+aws ec2 describe-subnets --no-paginate --filters "Name=default-for-az,Values=true" | egrep "(VpcId)|(SubnetId)"
+```
 
 ## Resources
 
