@@ -29,7 +29,7 @@ Resources:
   WebServerHost:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0603cbe34fd08cb81
+      ImageId: ami-0c94855ba95c71c99
       InstanceType: t2.micro
       KeyName: !Ref KeyPairName
       SecurityGroupIds:
@@ -45,9 +45,9 @@ Resources:
             yum update -y
             yum install python3 -y
             pip3 install flask
-            wget -P templates https://raw.githubusercontent.com/TylerCounter/aws/master/projects/001-roman-numerals-converter/templates/index.html
-            wget -P templates https://raw.githubusercontent.com/TylerCounter/aws/master/projects/001-roman-numerals-converter/templates/result.html
-            wget https://raw.githubusercontent.com/TylerCounter/aws/master/projects/001-roman-numerals-converter/roman-numerals-converter-app.py
+            wget -P templates https://raw.githubusercontent.com/huseyin-yigit/aws/master/projects/001-roman-numerals-converter/templates/index.html
+            wget -P templates https://raw.githubusercontent.com/huseyin-yigit/aws/master/projects/001-roman-numerals-converter/templates/result.html
+            wget https://raw.githubusercontent.com/huseyin-yigit/aws/master/projects/001-roman-numerals-converter/roman-numerals-converter-app.py
             python3 roman-numerals-converter-app.py
 Outputs:
   WebsiteURL:
