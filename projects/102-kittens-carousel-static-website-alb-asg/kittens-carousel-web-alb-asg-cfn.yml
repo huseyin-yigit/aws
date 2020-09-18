@@ -40,9 +40,9 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties: 
       LaunchTemplateData:
-        ImageId: ami-0603cbe34fd08cb81
+        ImageId: ami-0c94855ba95c71c99
         InstanceType: t2.micro
-        KeyName: firstkey
+        KeyName: banana
         SecurityGroupIds: 
           - !GetAtt WebServerSecurityGroup.GroupId
         TagSpecifications: 
@@ -55,7 +55,7 @@ Resources:
               #! /bin/bash
               yum update -y
               yum install httpd -y
-              FOLDER="https://https://raw.githubusercontent.com/TylerCounter/aws/master/projects/102-kittens-carousel-static-website-alb-asg/static-web/"
+              FOLDER="https://raw.githubusercontent.com/huseyin-yigit/aws/master/projects/102-kittens-carousel-static-website-alb-asg/static-web/"
               curl -s --create-dirs -o "/var/www/html/index.html" -L "$FOLDER"index.html
               curl -s --create-dirs -o "/var/www/html/cat0.jpg" -L "$FOLDER"cat0.jpg
               curl -s --create-dirs -o "/var/www/html/cat1.jpg" -L "$FOLDER"cat1.jpg
@@ -77,9 +77,12 @@ Resources:
       SecurityGroups: 
         - !GetAtt ALBSecurityGroup.GroupId
       Subnets:
-        - subnet-7e4af132
-        - subnet-b49376df
-        - subnet-cc7526b6
+        - subnet-150c312b
+        - subnet-31c52f6e
+        - subnet-332dd912
+        - subnet-451dbd4b
+        - subnet-ceac45a8
+        - subnet-0a7ac347
       Type: application
   ALBListener:
     Type: AWS::ElasticLoadBalancingV2::Listener
